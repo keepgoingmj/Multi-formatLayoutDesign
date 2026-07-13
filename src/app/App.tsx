@@ -5,24 +5,24 @@ import gsLogo from "@/imports/GS_logo_1.png";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
-type Format = "landscape" | "portrait";
-type CategoryMode = "main" | "work" | "life" | "etc";
+export type Format = "landscape" | "portrait";
+export type CategoryMode = "main" | "work" | "life" | "etc";
 
-interface BulletItem {
+expoert interface BulletItem {
   id: string;
   text: string;
   subText: string;
   showSub: boolean;
 }
 
-interface SharedVars {
+expoert interface SharedVars {
   categoryLabel: string;
   highlightText: string;
   qrUrl: string;
   qrLabel: string;
 }
 
-interface FormatVars {
+export interface FormatVars {
   title: string;
   description: string;
 }
@@ -157,7 +157,7 @@ const WORK_ACCENTS = [
   { label: "화이트", color: "#FFFFFF" },
 ];
 
-function LandscapeCanvas({ shared, fmtVars, bullets, showHighlight, showQR, catMode, accentOverride }: {
+export function LandscapeCanvas({ shared, fmtVars, bullets, showHighlight, showQR, catMode, accentOverride }: {
   shared: SharedVars; fmtVars: FormatVars; bullets: BulletItem[];
   showHighlight: boolean; showQR: boolean; catMode: CategoryMode; accentOverride?: string;
 }) {
@@ -172,7 +172,7 @@ function LandscapeCanvas({ shared, fmtVars, bullets, showHighlight, showQR, catM
   const bSize = bulletFontSize(bullets.length, 18);
 
   return (
-    <CanvasWrapper w={w} h={h} scale={CANVAS_LANDSCAPE.scale}>
+    <CanvasWrapper w={w} h={h} scale={scale ?? CANVAS_LANDSCAPE.scale}>
       <div style={{ width: w, height: h, background: t.bg, display: "flex", flexDirection: "column" }}>
 
         {/* Brand label */}
@@ -262,7 +262,7 @@ function LandscapeCanvas({ shared, fmtVars, bullets, showHighlight, showQR, catM
 
 // ─── Portrait Canvas ──────────────────────────────────────────────────────────
 
-function PortraitCanvas({ shared, fmtVars, bullets, showHighlight, showQR, catMode }: {
+export function PortraitCanvas({ shared, fmtVars, bullets, showHighlight, showQR, catMode }: {
   shared: SharedVars; fmtVars: FormatVars; bullets: BulletItem[];
   showHighlight: boolean; showQR: boolean; catMode: CategoryMode;
 }) {
@@ -274,7 +274,7 @@ function PortraitCanvas({ shared, fmtVars, bullets, showHighlight, showQR, catMo
     : { color: t.title };
 
   return (
-    <CanvasWrapper w={w} h={h} scale={CANVAS_PORTRAIT.scale}>
+    <CanvasWrapper w={w} h={h} scale={scale ?? CANVAS_PORTRAIT.scale}>
       <div style={{ width: w, height: h, background: t.bg, display: "flex", flexDirection: "column" }}>
 
         {/* Brand label */}
