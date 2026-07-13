@@ -8,14 +8,14 @@ import gsLogo from "@/imports/GS_logo_1.png";
 export type Format = "landscape" | "portrait";
 export type CategoryMode = "main" | "work" | "life" | "etc";
 
-expoert interface BulletItem {
+export interface BulletItem {
   id: string;
   text: string;
   subText: string;
   showSub: boolean;
 }
 
-expoert interface SharedVars {
+export interface SharedVars {
   categoryLabel: string;
   highlightText: string;
   qrUrl: string;
@@ -157,7 +157,7 @@ const WORK_ACCENTS = [
   { label: "화이트", color: "#FFFFFF" },
 ];
 
-export function LandscapeCanvas({ shared, fmtVars, bullets, showHighlight, showQR, catMode, accentOverride }: {
+export function LandscapeCanvas({ shared, fmtVars, bullets, showHighlight, showQR, catMode, accentOverride, scale }: {
   shared: SharedVars; fmtVars: FormatVars; bullets: BulletItem[];
   showHighlight: boolean; showQR: boolean; catMode: CategoryMode; accentOverride?: string;
 }) {
@@ -262,7 +262,7 @@ export function LandscapeCanvas({ shared, fmtVars, bullets, showHighlight, showQ
 
 // ─── Portrait Canvas ──────────────────────────────────────────────────────────
 
-export function PortraitCanvas({ shared, fmtVars, bullets, showHighlight, showQR, catMode }: {
+export function PortraitCanvas({ shared, fmtVars, bullets, showHighlight, showQR, catMode, scale }: {
   shared: SharedVars; fmtVars: FormatVars; bullets: BulletItem[];
   showHighlight: boolean; showQR: boolean; catMode: CategoryMode;
 }) {
