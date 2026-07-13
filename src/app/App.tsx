@@ -159,7 +159,7 @@ const WORK_ACCENTS = [
 
 export function LandscapeCanvas({ shared, fmtVars, bullets, showHighlight, showQR, catMode, accentOverride, scale }: {
   shared: SharedVars; fmtVars: FormatVars; bullets: BulletItem[];
-  showHighlight: boolean; showQR: boolean; catMode: CategoryMode; accentOverride?: string;
+  showHighlight: boolean; showQR: boolean; catMode: CategoryMode; accentOverride?: string; scale?: number;
 }) {
   const { w, h } = CANVAS_LANDSCAPE;
   const base = CANVAS_THEME[catMode];
@@ -264,7 +264,7 @@ export function LandscapeCanvas({ shared, fmtVars, bullets, showHighlight, showQ
 
 export function PortraitCanvas({ shared, fmtVars, bullets, showHighlight, showQR, catMode, scale }: {
   shared: SharedVars; fmtVars: FormatVars; bullets: BulletItem[];
-  showHighlight: boolean; showQR: boolean; catMode: CategoryMode;
+  showHighlight: boolean; showQR: boolean; catMode: CategoryMode; scale?: number;
 }) {
   const { w, h } = CANVAS_PORTRAIT;
   const t = CANVAS_THEME[catMode];
