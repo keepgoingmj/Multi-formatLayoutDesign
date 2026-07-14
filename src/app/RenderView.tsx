@@ -43,7 +43,7 @@ export default function RenderView() {
       <div style={{ width: 1080, height: 1920, overflow: "hidden" }}>
         <PortraitCanvas
           shared={shared} fmtVars={pVars} bullets={bullets}
-          showHighlight={showHighlight} showQR={showQR} catMode={catMode} scale={1}
+          showHighlight={showHighlight} showQR={showQR} catMode={catMode} scale={1.6}
         />
       </div>
     );
@@ -53,7 +53,7 @@ export default function RenderView() {
     <div style={{ width: 1920, height: 1080, overflow: "hidden" }}>
       <LandscapeCanvas
         shared={shared} fmtVars={lVars} bullets={bullets}
-        showHighlight={showHighlight} showQR={showQR} catMode={catMode} scale={1}
+        showHighlight={showHighlight} showQR={showQR} catMode={catMode} scale={1.6}
       />
     </div>
   );
