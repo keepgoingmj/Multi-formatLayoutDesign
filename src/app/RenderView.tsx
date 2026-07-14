@@ -38,13 +38,13 @@ export default function RenderView() {
 
   return (
     <div style={{ display: "flex", background: "#000" }}>
-      <div id="render-landscape" style={{ width: 1920, height: 1080 }}>
+      <div id="render-landscape" style={{ width: 1920, height: 1080, overflow: 'hidden' }}>
         <LandscapeCanvas
           shared={shared} fmtVars={lVars} bullets={bullets}
           showHighlight={showHighlight} showQR={showQR} catMode={catMode} scale={1}
         />
       </div>
-      <div id="render-portrait" style={{ width: 1080, height: 1920 }}>
+      <div id="render-portrait" style={{ width: 1080, height: 1920, overflow: 'hidden' }}>
         <PortraitCanvas
           shared={shared} fmtVars={pVars} bullets={bullets}
           showHighlight={showHighlight} showQR={showQR} catMode={catMode} scale={1}
